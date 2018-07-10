@@ -154,6 +154,11 @@ const menuData = [
       },
     ],
   },
+  {
+    name: 'awsSearch',
+    icon: 'table',
+    path: 'awsSearch',
+  },
 ];
 
 function formatter(data, parentPath = '/', parentAuthority) {
