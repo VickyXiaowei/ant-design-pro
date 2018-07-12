@@ -11,7 +11,6 @@ import { enquireScreen, unenquireScreen } from 'enquire-js';
 import GlobalHeader from '../components/GlobalHeader';
 import GlobalFooter from '../components/GlobalFooter';
 import SiderMenu from '../components/SiderMenu';
-import NotFound from '../routes/Exception/404';
 import { getRoutes } from '../utils/utils';
 import Authorized from '../utils/Authorized';
 import { getMenuData } from '../common/menu';
@@ -256,7 +255,6 @@ class BasicLayout extends React.PureComponent {
                 />
               ))}
               <Redirect exact from="/" to={bashRedirect} />
-              <Route render={NotFound} />
             </Switch>
           </Content>
           <Footer style={{ padding: 0 }}>
@@ -302,8 +300,7 @@ class BasicLayout extends React.PureComponent {
   }
 }
 
-export default connect(({ user, global = {}, loading }) => ({
-  currentUser: user.currentUser,
+export default connect(({ global = {}, loading }) => ({
   collapsed: global.collapsed,
   fetchingNotices: loading.effects['global/fetchNotices'],
   notices: global.notices,
